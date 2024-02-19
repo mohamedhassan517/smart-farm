@@ -1,0 +1,318 @@
+/* ========== ROOT VALUES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    scroll-behavior: smooth; 
+}
+
+
+
+
+/* ------------- SCROLL TO TOP BUTTON ------------- */
+
+#scrollTop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    transform: translate(90vw, 90vh);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.5s;
+    z-index: 1000;
+    opacity: 0;
+}
+#scrollTop ion-icon {
+    background: #fff;
+    color: #010050;
+    transition: all 0.5s;
+}
+#scrollTop ion-icon:hover {
+    color: #fff;
+    background: #56269a;
+}
+
+
+/* ------------- HEADER ------------- */
+.mainHeader {
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(island3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+nav {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    padding: 2% 3%;
+    z-index: 1000;
+    transition: all 0.5s;
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0.6em 0.8em;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: relative;
+    text-transform: uppercase;
+}
+nav ul li h2 {
+    font-size: 1.4em;
+    transition: all 0.5s;
+}
+nav ul li h2:hover {
+    font-weight: 300;
+}
+.pages {
+    padding-bottom: -0.8em;
+    bottom: -0.3em;
+}
+.pages::after {
+    content: '';
+    width: 0%;
+    height: 0.15em;
+    background: #96c845;
+    display: flex;
+    margin: auto;
+    transition: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1);
+}
+.pages:hover::after {
+    width: 100%;
+}
+
+/* CHANGE HEADER */
+.change-header {
+    background: linear-gradient(to bottom, rgb(10, 135, 87), rgb(10, 135, 87), rgba(10, 135, 87, 0.9));
+    color: #fff;
+    padding: 0 0 0 40px;
+    box-shadow: 0 10px 30px rgba(10, 135, 87, 0.95);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Header */
+.header {
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+.header h2{
+    padding: 6em 1em 0.5em 1em;
+    text-align: center;
+    position: relative;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.header p {
+    padding: 0.2em 1em 0.5em 1em;
+    text-align: center;
+    position: relative;
+    margin: 1vw;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+button {
+    padding: 0.8em 1.2em;
+    margin: 1em;
+    text-align: center;
+    color: #010050;
+    background: transparent;
+    border: 1px solid #010050;
+    outline: none;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.5s;
+}
+button:hover {
+    background: #010050;
+    color: #fff;
+    font-weight: 400;
+}
+
+
+/* ------------- TEXTSECTION ------------- */
+.textSection {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.textSection h2 {
+    padding: 0;
+    margin-top: 3em;
+    text-align: center;
+    position: relative;
+    font-size: 2.2em;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.textSection p {
+    width: 25em;
+    padding: 1em;
+    text-align: center;
+    font-weight: 400;
+    position: relative;
+    font-size: 1.5em;
+}
+.textSection button {
+    margin: 1em;
+    padding: 1em;
+    font-size: 1em;
+    position: relative;
+    top: 0;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+hr {
+    border: 1px solid #010050;
+}
+
+/* ------------- ABOUT ------------- */
+#about {
+    z-index: -1;
+    justify-content: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 7em;
+}
+#about .content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 0;
+}
+#about h2 {
+    padding: 0.5em 0;
+}
+#about p {
+    text-align: left;
+    padding: 2em 0;
+}
+#about button {
+    position: relative;
+    left: 0;
+    transform: translate(-10%, -25%);
+}
+#about img {
+    border-radius: 0;
+    padding: 1.2em;
+    margin-left: 2.2em;
+    transition: all 0.5s;
+}
+#about img:hover {
+    scale: 1.2;
+}
+#island1 {
+    width: 17em;
+    z-index: 2;
+}
+#island2 {
+    width: 14em;
+    z-index: 1;
+    left: 68%;
+    position: absolute;
+}
+
+
+ion-icon {
+    font-size: 1.5em;
+    color: #010050;
+    border: 0.085em solid #010050;
+    cursor: pointer;
+    padding: 0.3em;
+    border-radius: 50%;
+}
+ion-icon:hover {
+    color: #fff;
+    background: #010050;
+}
+
+
+/* ------------- Photos ------------- */
+#photos {
+    width: 100%;
+    min-height: 140vh;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.islandsChoice {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    position: relative;
+}
+.islandImg {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 10em;
+    height: 15em;
+    margin: 2em;
+    background: #000;
+    overflow: hidden;
+    box-shadow: 6px 6px 8px #90d7ac;
+    transition: all 0.5s;
+}
+.islandImg img {
+    min-height: 100%;
+    min-width: 100%;
+    border-radius: 0;
+}
+.islandImg:hover {
+    transform: translateY(-1em);
+    box-shadow: 12px 12px 8px #90d7ac;
+}
+.islandImg p {
+    text-align: left;
+    position: absolute;
+    width: 12em;
+    transform: translate(0, 6em);
+    color: #fff;
+    font-size: 0.8em;
+    cursor: default;
+    z-index: 10;
+}
+#flexShrink {
+    flex-shrink: 0.9;
+
+}
+
+
+/* ------------- FOOTER ------------- */
+.footer {
+    background: #010050;
+    color: #fff;
+    width: 100%;
+    min-height: 30vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    column-gap: 2em;
+}
+.footer h2 {
+    color: #fff;
+    margin: 1em 0.5em;
+}

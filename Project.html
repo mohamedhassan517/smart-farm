@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Smart Farming</title>
+        <link rel="stylesheet" href="Project.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </head>
+    <body>
+        
+        
+        <!--------- SCROLL TO TOP BUTTON --------->
+        <div id="scrollTop" onclick="scrollToTop()">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+        </div>
+
+        <!------------- HEADER ------------->
+        <div class="mainHeader">
+            <nav id="header">
+                <ul>
+                    <li><h2 onclick="scrollToTop()">Home</h2></li>
+                    <li class="pages" onclick="scrollToAbout()">ABOUT</li>
+                    <li class="pages" onclick="scrollToSystem()">System Configration</li>
+                    <li class="pages" onclick="scrollToHDA()">Histroical Data Analysis</li>
+                    <li class="pages" onclick="scrollToP()">Photos</li>
+                    <li class="pages" onclick="scrollTocontact()">Contact Us</li>
+                </ul>
+            </nav>
+            <div class="header">
+                <h2>Explore</h2>
+                <p>As our project we are planning to create a smart farming system.</p>
+                <button onclick="scrollToAbout()">Find out more</button>
+            </div>
+        </div>
+        <!------------- HEADER Done!------------->
+        <hr>
+        <!------------- ABOUT ------------->
+        <div class="textSection" id="about">
+            <div class="content">
+                <h2>About </h2>
+                <p>
+                    Smart Farm is a smart project that allows to interact and improve the management of agricultural farms.
+                </p>
+               
+            </div>
+            <img src="istockphoto-1040778830-1024x1024.jpg" id="island1">
+            <img src="istockphoto-1463452333-1024x1024.jpg" id="island2">
+        </div>
+        <!------------- ABOUT Done!------------->
+        <hr>
+        <!------------- System configration ------------->
+        <div class="textSection" id="system">
+            <h2>System Configration</h2>
+        
+            <div class="sensor-data">
+                <p>Soil Moisture: <span id="moisture">---</span></p>
+                <p>Temperature: <span id="temperature">---</span></p>
+                <p>Nutrient Availability: <span id="nutrient">---</span></p>
+                <p>pH Level: <span id="ph">---</span></p>
+            </div>
+
+            <div class="control-panel">
+                <button id="startIrrigation">Start Irrigation</button>
+                <button id="stopIrrigation">Stop Irrigation</button>
+            </div>
+        </div>
+        <!------------- System configration Done!------------->
+        
+        <hr>
+       
+        <!------------- Histroical Data Analysis ------------->
+        <div class="textSection" id="historical">
+
+            <div class="container">
+            <h2>Historical Data Analysis</h2>
+            <canvas id="sensorChart" width="800" height="400"></canvas>
+            </div>
+        </div>
+          
+        <!------------- Histroical Data Analysis Done!------------->
+        <hr>
+        <!------------- Photos ------------->
+        <div class="textSection" id="photos">
+            
+            <h2>Photos</h2>
+            <div class="islandsChoice">
+                <div class="islandImg">
+                    <img src="pexels-tim-mossholder-974314.jpg">
+                </div>
+                <div class="islandImg">
+                    <img src="pexels-tom-fisk-1595108.jpg">
+                </div>
+                <div class="islandImg">
+                    <img src="1.jfif">
+                </div>
+                <div class="islandImg">
+                    <img src="2.jfif" id="flexShrink">
+                </div>
+                <div class="islandImg">
+                    <img src="3.jfif">
+                </div>
+                <div class="islandImg">
+                    <img src="4.jfif">
+                </div>
+            </div>
+        </div>
+        <!------------- Photos  Done!------------->
+        
+        <hr>
+        <!------------- FOOTER ------------->
+        <div class="textSection footer" id="contact">
+            <h2>Contact Us</h2>
+            <a href="mailto:mohamedhassanali001@gmail.com">Contact Us</a>
+        </div>
+        <!------------- FOOTER Done!------------->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="project.js"></script>
+        <script>
+            /* ------------- SCROLL TO TOP BUTTON CHANGE ------------- */
+
+            function showScrollToTopBtn() {
+                if (document.body.scrollTop > 400 || 
+                document.documentElement.scrollTop > 400) {
+                    document.getElementById('scrollTop').style.opacity = '1';
+                } else {
+                    document.getElementById('scrollTop').style.opacity = '0';
+                }
+            }
+
+            window.addEventListener('scroll', showScrollToTopBtn);
+
+            /* ------------- HEADER CHANGE ------------- */
+            let pages = document.querySelectorAll('.pages');
+
+            function changeHeader() {
+                if (document.body.scrollTop > 150 || 
+                document.documentElement.scrollTop > 150) {
+                    document.querySelector('nav').classList.add('change-header');
+                    document.querySelector('h2').classList.add('change-header');
+
+                    pages.forEach((item) => {
+                        item.style.color = '#fff';
+                    })
+                }  
+                else {
+                    document.querySelector('nav').classList.remove('change-header');
+                    document.querySelector('h2').classList.remove('change-header');
+
+                    pages.forEach((item) => {
+                        item.style.color = '#000';
+                    })
+                }
+            }
+
+            window.addEventListener('scroll', changeHeader);
+
+
+            /* ------------- IMAGE APPEAR FRONT ON HOVER ------------- */
+            let island1 = document.getElementById('island1');
+            let island2 = document.getElementById('island2');
+
+            island2.addEventListener('mouseover', function(event) {
+                island2.style.zIndex = '4';
+            })
+            island2.addEventListener('mouseout', function(event) {
+                island2.style.zIndex = '1';
+            })
+
+            /* ------------- SCROLL ------------- */
+            function scrollToTop() {
+                window.scrollTo(0, 0);
+            }
+
+            function scrollToAbout() {
+                var about = document.getElementById('about');
+                about.scrollIntoView();
+            }
+            function scrollToSystem() {
+                var system = document.getElementById('system');
+                system.scrollIntoView();
+            }
+            function scrollToHDA() {
+                var historical = document.getElementById('historical');
+                historical.scrollIntoView();
+            }
+            function scrollToP() {
+                var P = document.getElementById('photos');
+                P.scrollIntoView();
+            }
+            function scrollTocontact() {
+                var contact = document.getElementById('contact');
+                contact.scrollIntoView();
+            }
+
+
+
+
+
+        </script>
+    </body>
+</html>
